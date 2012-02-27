@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1330210918 source:c:\documents and settings\c\my documents\_workspace\cactusexchange\side.cpp
+	"Side.h"
+	<iostream>
+	<map>
+	<string>
+	"Order.h"
+
+1330208635 c:\documents and settings\c\my documents\_workspace\cactusexchange\side.h
+	<iostream>
+	<map>
+	<string>
+	"Order.h"
+
+1330315524 source:c:\documents and settings\c\my documents\_workspace\cactusexchange\main.cpp
+	<iostream>
+	<map>
+	<string>
+	"Side.h"
+	"Order.h"
+
+1330210761 c:\documents and settings\c\my documents\_workspace\cactusexchange\order.h
+	<string>
+
+1330208712 source:c:\documents and settings\c\my documents\_workspace\cactusexchange\order.cpp
+	"Order.h"
+	<string>
+
+1330309460 source:c:\documents and settings\c\my documents\_workspace\cactusexchange\participant.cpp
+	"Participant.h"
+	<string>
+	<map>
+
+1330309460 c:\documents and settings\c\my documents\_workspace\cactusexchange\participant.h
+	<string>
+	<map>
+
