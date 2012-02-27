@@ -30,5 +30,20 @@ void Participant::addTradeTransaction(string symbol, int quantity, double tradeP
     }
 
     tradeCash = quantity*tradePrice;
-    cash += tradeCash;
+    cash -= tradeCash;
+}
+
+int Participant::getSymbolQuantity(string symbol)
+{
+    positionMap::iterator it;
+    it = positions.find(symbol);
+    if (it == positions.end())
+    {
+        return 0;
+    }
+    else
+    {
+        return positions[symbol];
+    }
+
 }

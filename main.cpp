@@ -15,8 +15,11 @@ int main()
 
     cout << conway.getCash() << endl;
     conway.addTradeTransaction("IBM",444,343);
-
     cout << conway.getCash() << endl;
+    cout << conway.getSymbolQuantity("IBM") << endl;
+    conway.addTradeTransaction("IBM",-444,345);
+    cout << conway.getCash() << endl;
+    cout << conway.getSymbolQuantity("IBM") << endl;
 
     Order order(5,6,"IBM",-400);
     Side BuySide("BUY");

@@ -14,6 +14,7 @@ class Participant
         double getCash(){ return cash; }
         int getAccountID(){ return accountID; }
         void addTradeTransaction(string symbol, int quantity, double tradePrice);
+        int getSymbolQuantity(string symbol);
     protected:
     private:
         int accountID;
