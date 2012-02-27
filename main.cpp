@@ -3,27 +3,20 @@
 #include <string>
 #include "Side.h"
 #include "Order.h"
+#include "Participant.h"
 
 using namespace std;
-
-typedef map< string,int > asdf;
 
 
 int main()
 {
-    asdf::iterator it;
-    asdf x;
-    int y;
-    y=55;
-    y+=3;
-    cout << y << endl;
-    x["hello"] = 3;
-    it = x.find("hellodd");
-    if (it == x.end())
-    {
-        cout << "what" << endl;
-    }
 
+    Participant conway(5,444444);
+
+    cout << conway.getCash() << endl;
+    conway.addTradeTransaction("IBM",444,343);
+
+    cout << conway.getCash() << endl;
 
     Order order(5,6,"IBM",-400);
     Side BuySide("BUY");
