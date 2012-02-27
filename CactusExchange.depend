@@ -51,7 +51,7 @@
 	<string>
 	"Order.h"
 
-1330359064 h:\_fe_work\cactusexchange\side.h
+1330366879 h:\_fe_work\cactusexchange\side.h
 	<iostream>
 	<map>
 	<string>
@@ -60,22 +60,38 @@
 1330351379 h:\_fe_work\cactusexchange\order.h
 	<string>
 
-1330361283 source:h:\_fe_work\cactusexchange\main.cpp
+1330370563 source:h:\_fe_work\cactusexchange\main.cpp
 	<iostream>
 	<map>
 	<string>
 	"Side.h"
 	"Order.h"
 	"Participant.h"
+	"Exchange.h"
 
 1330351379 source:h:\_fe_work\cactusexchange\order.cpp
 	"Order.h"
 	<string>
 
-1330364748 source:h:\_fe_work\cactusexchange\orderbook.cpp
+1330366480 source:h:\_fe_work\cactusexchange\orderbook.cpp
 	"OrderBook.h"
 
-1330364883 h:\_fe_work\cactusexchange\orderbook.h
+1330366480 h:\_fe_work\cactusexchange\orderbook.h
 	<string>
 	"Side.h"
+
+1330370739 source:h:\_fe_work\cactusexchange\exchange.cpp
+	"Exchange.h"
+	<map>
+	<string>
+	"OrderBook.h"
+	"Order.h"
+	"Participant.h"
+
+1330370222 h:\_fe_work\cactusexchange\exchange.h
+	<map>
+	<string>
+	"OrderBook.h"
+	"Order.h"
+	"Participant.h"
 

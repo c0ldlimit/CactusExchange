@@ -4,17 +4,18 @@
 #include "Side.h"
 #include "Order.h"
 #include "Participant.h"
+#include "Exchange.h"
 
 using namespace std;
 
 
+
 int main()
 {
-    Order order(5,6,"IBM",-400);
-    Side BuySide("BUY");
-    BuySide.addPriceLevel(5,order);
-    cout << order.getSymbol() << endl;
-    BuySide.removePriceLevel(6);
-    cout << order.getSymbol() << endl;
+    Exchange Conway;
+    Conway.addParticipant(1,10000);
+    Conway.addParticipant(2,30000);
+
+    cout << Conway.getParticipantCash(2) << endl;
     return 0;
 }
