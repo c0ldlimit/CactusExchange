@@ -15,14 +15,15 @@ class Side
 {
     public:
         Side(string sideName);
-        string sideName;
-        priceLevel levels;
 
         void addPriceLevel(int price, Order order);
-        void removePriceLevel();
+        void removePriceLevel(int price);
+        string getSideName(){ return sideName; }
 
     protected:
     private:
+        string sideName;
+        priceLevel levels;
 };
 
 #endif // SIDE_H

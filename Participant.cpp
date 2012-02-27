@@ -30,7 +30,7 @@ void Participant::addTradeTransaction(string symbol, int quantity, double tradeP
     }
 
     tradeCash = quantity*tradePrice;
-    cash -= tradeCash;
+    cash -= tradeCash; // cash changes in the opposite direction of quantity
 }
 
 int Participant::getSymbolQuantity(string symbol)
