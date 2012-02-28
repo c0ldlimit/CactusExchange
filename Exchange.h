@@ -15,9 +15,10 @@ class Exchange
 {
     public:
         Exchange();
+        void addOrderBook(string symbol);
         void addParticipant(int accountID, double initialCash);
         double getParticipantCash(int accountID);
-        int getParticipantPosition(string symbol);
+        int getParticipantPosition(int accountID, string symbol);
         void addBuyOrder(int accountID, string symbol, double price, int size);
         void addSellOrder(int accountID, string symbol, double price, int size);
 
@@ -25,6 +26,7 @@ class Exchange
     private:
         participantContainer participants;
         orderBookContainer orderBooks;
+        int orderID;
 };
 
 #endif // EXCHANGE_H

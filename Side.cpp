@@ -25,3 +25,41 @@ void Side::removePriceLevel(int price)
     }
 
 }
+
+void Side::updatePriceLevel(int price, Order order)
+{
+    priceLevel::iterator it;
+    it = levels.find(price);
+    if (it != levels.end())
+    {
+        levels[price].insert (make_pair(order.getOrderId(), order));
+    }
+
+}
+
+
+int Side::getMaxPrice()
+{
+    if (levels.empty())
+    {
+        return -1;
+    }
+    else
+    {
+        return (levels.rbegin())->first;
+    }
+
+}
+
+int Side::getMinPrice()
+{
+    if (levels.empty())
+    {
+        return -1;
+    }
+    else
+    {
+        return (levels.begin())->first;
+    }
+
+}

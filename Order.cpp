@@ -8,3 +8,8 @@ orderID(orderID), accountID(accountID), symbol(symbol), quantity(quantity)
 {
 
 }
+
+void Order::updateQuantity(int deltaQuantity)
+{
+    quantity+=deltaQuantity;
+}

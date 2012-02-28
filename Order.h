@@ -12,6 +12,7 @@ class Order
         int getAccountID() { return accountID; }
         string getSymbol() { return symbol; }
         int getQuantity() { return quantity; }
+        void updateQuantity(int deltaQuantity);
 
     protected:
     private:

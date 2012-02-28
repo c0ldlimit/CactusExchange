@@ -18,7 +18,10 @@ class Side
 
         void addPriceLevel(int price, Order order);
         void removePriceLevel(int price);
+        void updatePriceLevel(int price, Order order);
         string getSideName(){ return sideName; }
+        int getMaxPrice();
+        int getMinPrice();
 
     protected:
     private:
