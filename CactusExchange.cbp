@@ -32,8 +32,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Exchange.cpp" />
+		<Unit filename="Exchange.h" />
 		<Unit filename="Order.cpp" />
 		<Unit filename="Order.h" />
+		<Unit filename="OrderBook.cpp" />
+		<Unit filename="OrderBook.h" />
 		<Unit filename="Participant.cpp" />
 		<Unit filename="Participant.h" />
 		<Unit filename="Side.cpp" />
