@@ -1,6 +1,7 @@
 #include "Exchange.h"
 #include <map>
 #include <string>
+#include <algorithm>
 #include "OrderBook.h"
 #include "Order.h"
 #include "Participant.h"
@@ -62,20 +63,47 @@ void Exchange::addBuyOrder(int accountID, string symbol, double price, int quant
     OrderBook* orderBookPtr;
     orderBookContainer::iterator it;
     it = orderBooks.find(symbol);
-    if (it == orderBooks.end()) // new symbol
+    if (it == orderBooks.end()) // new symbol, create new order book
     {
         orderBooks.insert (make_pair(symbol,OrderBook(symbol)));
     }
     else
-    {
+    { // TODO not sure how to encapsulate when we also need to update Participant objects
         orderBookPtr = &(it->second);
-        if (intPrice < orderBookPtr->getBestAsk() ) // add to order book
+        if (intPrice < orderBookPtr->getBestAsk() ) // add to top of order book
         {
             orderBookPtr->appendBuyOrder(intPrice,newOrder);
         }
         else // trade
         {
-            orderBookPtr->tradeBuyOrder(intPrice,newOrder);
+            orderSet* lastOrderSetPtr;
+            Order* lastOrderPtr;
+            int lastBestAskPrice;
+            orderSet::iterator itOrderSet;
+
+            // intialized loop vars
+            int unallocatedQty = quantity;
+            int matchQty;
+            lastBestAskPrice = orderBookPtr->getBestAsk();
+            lastOrderSetPtr = orderBookPtr->getAskOrderSet(lastBestAskPrice);
+
+
+            while(lastBestAskPrice!=-1) // iterate through price levels
+            {
+                // TODO How do I make priceLevel and orderSet "read-only"?
+                itOrderSet = (*lastOrderSetPtr).begin();
+                while(itOrderSet != (*lastOrderSetPtr).end()) // iterate through orders
+                {
+                    lastOrderPtr = &(*itOrderSet).second;
+                    matchQty = max(unallocatedQty,0);
+                    ++it;
+                }
+                lastBestAskPrice = orderBookPtr->getBestAsk();
+                lastOrderSetPtr = orderBookPtr->getAskOrderSet(lastBestAskPrice);
+            }
+
+
+
         }
 
     }

@@ -5,6 +5,7 @@
 #include "OrderBook.h"
 #include "Order.h"
 #include "Participant.h"
+#include <algorithm>
 
 using namespace std;
 

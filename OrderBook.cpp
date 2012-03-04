@@ -46,24 +46,12 @@ void OrderBook::appendSellOrder(int price, Order order)
 
 }
 
-
-int OrderBook::tradeBuyOrder(int price, Order order)
+orderSet* OrderBook::getBidOrderSet(int price)
 {
-    int qtyUnallocated = order.getQuantity();
-    Side::iterator it;
-
-    while(qtyUnallocated>0)
-    {
-
-    }
-    return 0; // returns the qtyUnallocated
+    return Bid.getOrderSet(price);
 }
 
-
-int OrderBook::tradeSellOrder(int price, Order order)
+orderSet* OrderBook::getAskOrderSet(int price)
 {
-    return 0;
-
+    return Ask.getOrderSet(price);
 }
-
-

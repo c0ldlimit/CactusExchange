@@ -63,3 +63,9 @@ int Side::getMinPrice()
     }
 
 }
+
+
+orderSet* Side::getOrderSet(int price)
+{
+    return &levels[price];
+}

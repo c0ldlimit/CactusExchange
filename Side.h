@@ -22,6 +22,7 @@ class Side
         string getSideName(){ return sideName; }
         int getMaxPrice();
         int getMinPrice();
+        orderSet* getOrderSet(int price);
 
     protected:
     private:

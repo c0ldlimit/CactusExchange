@@ -1,37 +1,39 @@
 # depslib dependency file v1.0
-1330210918 source:c:\documents and settings\c\my documents\_workspace\cactusexchange\side.cpp
+1330817861 source:c:\documents and settings\c\my documents\_workspace\cactusexchange\side.cpp
 	"Side.h"
 	<iostream>
 	<map>
 	<string>
 	"Order.h"
 
-1330208635 c:\documents and settings\c\my documents\_workspace\cactusexchange\side.h
+1330826518 c:\documents and settings\c\my documents\_workspace\cactusexchange\side.h
 	<iostream>
 	<map>
 	<string>
 	"Order.h"
 
-1330315524 source:c:\documents and settings\c\my documents\_workspace\cactusexchange\main.cpp
+1330804642 source:c:\documents and settings\c\my documents\_workspace\cactusexchange\main.cpp
 	<iostream>
 	<map>
 	<string>
 	"Side.h"
 	"Order.h"
+	"Participant.h"
+	"Exchange.h"
 
-1330210761 c:\documents and settings\c\my documents\_workspace\cactusexchange\order.h
+1330804642 c:\documents and settings\c\my documents\_workspace\cactusexchange\order.h
 	<string>
 
-1330208712 source:c:\documents and settings\c\my documents\_workspace\cactusexchange\order.cpp
+1330804642 source:c:\documents and settings\c\my documents\_workspace\cactusexchange\order.cpp
 	"Order.h"
 	<string>
 
-1330319954 source:c:\documents and settings\c\my documents\_workspace\cactusexchange\participant.cpp
+1330804642 source:c:\documents and settings\c\my documents\_workspace\cactusexchange\participant.cpp
 	"Participant.h"
 	<string>
 	<map>
 
-1330309460 c:\documents and settings\c\my documents\_workspace\cactusexchange\participant.h
+1330804642 c:\documents and settings\c\my documents\_workspace\cactusexchange\participant.h
 	<string>
 	<map>
 
@@ -95,4 +97,23 @@
 	"OrderBook.h"
 	"Order.h"
 	"Participant.h"
+
+1330826734 c:\documents and settings\c\my documents\_workspace\cactusexchange\exchange.h
+	<map>
+	<string>
+	"OrderBook.h"
+	"Order.h"
+	"Participant.h"
+	<algorithm>
+
+1330826734 c:\documents and settings\c\my documents\_workspace\cactusexchange\orderbook.h
+	<string>
+	"Side.h"
+	"Order.h"
+
+1330824357 source:c:\documents and settings\c\my documents\_workspace\cactusexchange\orderbook.cpp
+	"OrderBook.h"
+	<string>
+	"Side.h"
+	"Order.h"
 

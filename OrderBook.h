@@ -15,8 +15,10 @@ class OrderBook
         int getBestAsk();
         void appendBuyOrder(int price, Order order);
         void appendSellOrder(int price, Order order);
-        int tradeBuyOrder(int price, Order order);
-        int tradeSellOrder(int price, Order order);
+        orderSet* getBidOrderSet(int price);
+        orderSet* getAskOrderSet(int price);
+
+
 
     protected:
     private:
