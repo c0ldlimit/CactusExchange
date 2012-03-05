@@ -21,5 +21,6 @@ int main()
 
 
     cout << Conway.getParticipantCash(2) << endl;
+
     return 0;
 }

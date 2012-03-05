@@ -6,7 +6,7 @@
 #include "Order.h"
 #include "Participant.h"
 
-Exchange::Exchange() : orderID(0)
+Exchange::Exchange()
 {
     //ctor
 }
@@ -55,9 +55,27 @@ int Exchange::getParticipantPosition(int accountID, string symbol)
 
  }
 
+ void Exchange::updateParticipant(int accountID, string symbol, int deltaQuantity, double tradePrice)
+{
+    Participant* participantPtr;
+
+    participantContainer::iterator it;
+    it = participants.find(accountID);
+    if (it != participants.end())
+    {
+        participantPtr = &(it->second);
+        (*participantPtr).addTradeTransaction(symbol,deltaQuantity,tradePrice);
+    }
+    else
+    {
+       // exception: participant does not exist!
+    }
+}
+
+
 void Exchange::addBuyOrder(int accountID, string symbol, double price, int quantity)
 {
-    Order newOrder(++orderID,accountID,symbol,quantity);
+    Order newOrder(accountID,symbol,quantity);
     int intPrice = int(price*100);
 
     OrderBook* orderBookPtr;
@@ -83,20 +101,32 @@ void Exchange::addBuyOrder(int accountID, string symbol, double price, int quant
 
             // intialized loop vars
             int unallocatedQty = quantity;
-            int matchQty;
+            int tradeQty;
             lastBestAskPrice = orderBookPtr->getBestAsk();
             lastOrderSetPtr = orderBookPtr->getAskOrderSet(lastBestAskPrice);
 
 
-            while(lastBestAskPrice!=-1) // iterate through price levels
+            while(lastBestAskPrice!=-1 && unallocatedQty!=0 && lastBestAskPrice<=intPrice) // iterate through price levels
             {
                 // TODO How do I make priceLevel and orderSet "read-only"?
                 itOrderSet = (*lastOrderSetPtr).begin();
-                while(itOrderSet != (*lastOrderSetPtr).end()) // iterate through orders
+                while(itOrderSet != (*lastOrderSetPtr).end() && unallocatedQty!=0) // iterate through orders
                 {
                     lastOrderPtr = &(*itOrderSet).second;
-                    matchQty = max(unallocatedQty,0);
-                    ++it;
+                    if (abs(unallocatedQty) < abs((*lastOrderPtr).getQuantity()))
+                    {
+                        tradeQty = unallocatedQty;
+                        unallocatedQty = 0;
+                        (*lastOrderPtr).updateQuantity(tradeQty); // update order
+                        updateParticipant(accountID,symbol,tradeQty,price); // update buyer
+                        updateParticipant((*lastOrderPtr).getAccountID(),symbol,-tradeQty,price); //update seller
+
+                    }
+                    else
+                    {
+                        // remove order
+                    }
+                    ++itOrderSet;
                 }
                 lastBestAskPrice = orderBookPtr->getBestAsk();
                 lastOrderSetPtr = orderBookPtr->getAskOrderSet(lastBestAskPrice);

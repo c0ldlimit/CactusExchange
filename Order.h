@@ -7,7 +7,7 @@ using namespace std;
 class Order
 {
     public:
-        Order(int orderID, int accountID, string symbol, int quantity);
+        Order(int accountID, string symbol, int quantity);
         int getOrderId() { return orderID; }
         int getAccountID() { return accountID; }
         string getSymbol() { return symbol; }
@@ -20,6 +20,7 @@ class Order
         int accountID;
         string symbol;
         int quantity;
+        static int lastOrderID;
 };
 
 #endif // ORDER_H

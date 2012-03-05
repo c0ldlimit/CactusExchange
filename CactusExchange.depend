@@ -12,7 +12,7 @@
 	<string>
 	"Order.h"
 
-1330804642 source:c:\documents and settings\c\my documents\_workspace\cactusexchange\main.cpp
+1330926433 source:c:\documents and settings\c\my documents\_workspace\cactusexchange\main.cpp
 	<iostream>
 	<map>
 	<string>
@@ -21,10 +21,10 @@
 	"Participant.h"
 	"Exchange.h"
 
-1330804642 c:\documents and settings\c\my documents\_workspace\cactusexchange\order.h
+1330925363 c:\documents and settings\c\my documents\_workspace\cactusexchange\order.h
 	<string>
 
-1330804642 source:c:\documents and settings\c\my documents\_workspace\cactusexchange\order.cpp
+1330925350 source:c:\documents and settings\c\my documents\_workspace\cactusexchange\order.cpp
 	"Order.h"
 	<string>
 
@@ -98,7 +98,7 @@
 	"Order.h"
 	"Participant.h"
 
-1330826734 c:\documents and settings\c\my documents\_workspace\cactusexchange\exchange.h
+1330926090 c:\documents and settings\c\my documents\_workspace\cactusexchange\exchange.h
 	<map>
 	<string>
 	"OrderBook.h"
@@ -116,4 +116,13 @@
 	<string>
 	"Side.h"
 	"Order.h"
+
+1330925145 source:c:\documents and settings\c\my documents\_workspace\cactusexchange\exchange.cpp
+	"Exchange.h"
+	<map>
+	<string>
+	<algorithm>
+	"OrderBook.h"
+	"Order.h"
+	"Participant.h"
 

@@ -22,12 +22,12 @@ class Exchange
         int getParticipantPosition(int accountID, string symbol);
         void addBuyOrder(int accountID, string symbol, double price, int size);
         void addSellOrder(int accountID, string symbol, double price, int size);
+        void updateParticipant(int accountID, string symbol, int deltaQuantity, double tradePrice);
 
     protected:
     private:
         participantContainer participants;
         orderBookContainer orderBooks;
-        int orderID;
 };
 
 #endif // EXCHANGE_H

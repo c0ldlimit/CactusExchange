@@ -3,13 +3,15 @@
 
 using namespace std;
 
-Order::Order(int orderID, int accountID, string symbol, int quantity) :
-orderID(orderID), accountID(accountID), symbol(symbol), quantity(quantity)
+Order::Order(int accountID, string symbol, int quantity) :
+accountID(accountID), symbol(symbol), quantity(quantity)
 {
-
+    orderID = ++lastOrderID;
 }
 
 void Order::updateQuantity(int deltaQuantity)
 {
     quantity+=deltaQuantity;
 }
+
+int Order::lastOrderID = 0;
