@@ -117,21 +117,20 @@ void Exchange::addBuyOrder(int accountID, string symbol, double price, int quant
                     {
                         tradeQty = unallocatedQty;
                         unallocatedQty = 0;
-                        (*lastOrderPtr).updateQuantity(tradeQty); // update order
-                        updateParticipant(accountID,symbol,tradeQty,price); // update buyer
-                        updateParticipant((*lastOrderPtr).getAccountID(),symbol,-tradeQty,price); //update seller
-
                     }
                     else
                     {
                         // remove order
                     }
+                    (*lastOrderPtr).updateQuantity(tradeQty); // update order
+                    updateParticipant(accountID,symbol,tradeQty,price); // update buyer
+                    updateParticipant((*lastOrderPtr).getAccountID(),symbol,-tradeQty,price); //update seller
                     ++itOrderSet;
                 }
                 lastBestAskPrice = orderBookPtr->getBestAsk();
                 lastOrderSetPtr = orderBookPtr->getAskOrderSet(lastBestAskPrice);
             }
-
+            // if unallocatedQty !=0 then add to bid book
 
 
         }
