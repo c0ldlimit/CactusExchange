@@ -55,3 +55,14 @@ orderSet* OrderBook::getAskOrderSet(int price)
 {
     return Ask.getOrderSet(price);
 }
+
+
+void OrderBook::removeBidPriceLevel(int price)
+{
+    Bid.removePriceLevel(price);
+}
+
+void OrderBook::removeAskPriceLevel(int price)
+{
+    Ask.removePriceLevel(price);
+}

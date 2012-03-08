@@ -17,6 +17,8 @@ class OrderBook
         void appendSellOrder(int price, Order order);
         orderSet* getBidOrderSet(int price);
         orderSet* getAskOrderSet(int price);
+        void removeBidPriceLevel(int price);
+        void removeAskPriceLevel(int price);
 
 
 

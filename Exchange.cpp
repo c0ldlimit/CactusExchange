@@ -105,7 +105,6 @@ void Exchange::addBuyOrder(int accountID, string symbol, double price, int quant
             lastBestAskPrice = orderBookPtr->getBestAsk();
             lastOrderSetPtr = orderBookPtr->getAskOrderSet(lastBestAskPrice);
 
-
             while(lastBestAskPrice!=-1 && unallocatedQty!=0 && lastBestAskPrice<=intPrice) // iterate through price levels
             {
                 // TODO How do I make priceLevel and orderSet "read-only"?
@@ -120,25 +119,32 @@ void Exchange::addBuyOrder(int accountID, string symbol, double price, int quant
                     }
                     else
                     {
-                        // remove order
+                        tradeQty = -(*lastOrderPtr).getQuantity();
+                        unallocatedQty -= tradeQty;
+                        (*lastOrderSetPtr).erase(itOrderSet); // remove order
                     }
                     (*lastOrderPtr).updateQuantity(tradeQty); // update order
                     updateParticipant(accountID,symbol,tradeQty,price); // update buyer
                     updateParticipant((*lastOrderPtr).getAccountID(),symbol,-tradeQty,price); //update seller
                     ++itOrderSet;
                 }
+                if (itOrderSet == (*lastOrderSetPtr).end()) // depleted price level
+                {
+                    orderBookPtr->removeAskPriceLevel(lastBestAskPrice);
+                }
                 lastBestAskPrice = orderBookPtr->getBestAsk();
                 lastOrderSetPtr = orderBookPtr->getAskOrderSet(lastBestAskPrice);
             }
-            // if unallocatedQty !=0 then add to bid book
+
+            if (unallocatedQty != 0) // remaining quantity add to order book
+            {
+                newOrder.updateQuantity(unallocatedQty-newOrder.getQuantity());
+                orderBookPtr->appendBuyOrder(intPrice,newOrder);
+            }
 
 
         }
 
     }
-
-
-    // if bid > best offer then trade will occur
-    // start with best offer
 
 }
