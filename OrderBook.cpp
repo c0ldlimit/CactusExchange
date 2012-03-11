@@ -22,7 +22,7 @@ int OrderBook::getBestAsk()
 
 void OrderBook::appendBuyOrder(int price, Order order)
 {
-    if (price>Bid.getMaxPrice()) // new price level
+    if (price>Bid.getMaxPrice() || Bid.getMaxPrice()==-1) // new price level
     {
         Bid.addPriceLevel(price,order);
     }
@@ -35,7 +35,7 @@ void OrderBook::appendBuyOrder(int price, Order order)
 
 void OrderBook::appendSellOrder(int price, Order order)
 {
-    if (price<Ask.getMinPrice()) // new price level
+    if (price<Ask.getMinPrice() || Ask.getMinPrice()==-1) // new price level
     {
         Ask.addPriceLevel(price,order);
     }

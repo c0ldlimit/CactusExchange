@@ -6,6 +6,7 @@
 #include "Order.h"
 #include "Participant.h"
 #include <algorithm>
+#include <list>
 
 using namespace std;
 
@@ -28,6 +29,7 @@ class Exchange
     private:
         participantContainer participants;
         orderBookContainer orderBooks;
+        void eraseOrders(orderSet* orderSetPtr, list<int> orderList);
 };
 
 #endif // EXCHANGE_H

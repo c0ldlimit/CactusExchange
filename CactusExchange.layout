@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="Exchange.cpp" open="1" top="1" tabpos="5">
-		<Cursor position="3741" topLine="122" />
+	<File name="Exchange.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="4994" topLine="145" />
 	</File>
-	<File name="Exchange.h" open="1" top="0" tabpos="4">
-		<Cursor position="841" topLine="9" />
+	<File name="Exchange.h" open="1" top="0" tabpos="2">
+		<Cursor position="841" topLine="10" />
 	</File>
-	<File name="Order.cpp" open="1" top="0" tabpos="9">
+	<File name="Order.cpp" open="1" top="0" tabpos="7">
 		<Cursor position="65" topLine="0" />
 	</File>
-	<File name="Order.h" open="1" top="0" tabpos="8">
-		<Cursor position="122" topLine="0" />
+	<File name="Order.h" open="1" top="0" tabpos="6">
+		<Cursor position="92" topLine="0" />
 	</File>
-	<File name="OrderBook.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="1031" topLine="0" />
+	<File name="OrderBook.cpp" open="1" top="0" tabpos="10">
+		<Cursor position="1248" topLine="45" />
 	</File>
-	<File name="OrderBook.h" open="1" top="0" tabpos="2">
-		<Cursor position="495" topLine="2" />
+	<File name="OrderBook.h" open="0" top="0" tabpos="2">
+		<Cursor position="585" topLine="7" />
 	</File>
-	<File name="Participant.cpp" open="1" top="0" tabpos="10">
-		<Cursor position="1136" topLine="10" />
+	<File name="Participant.cpp" open="1" top="0" tabpos="8">
+		<Cursor position="417" topLine="9" />
 	</File>
-	<File name="Participant.h" open="1" top="0" tabpos="11">
-		<Cursor position="536" topLine="4" />
+	<File name="Participant.h" open="1" top="0" tabpos="9">
+		<Cursor position="587" topLine="4" />
 	</File>
-	<File name="Side.cpp" open="1" top="0" tabpos="7">
-		<Cursor position="1080" topLine="20" />
+	<File name="Side.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="462" topLine="12" />
 	</File>
-	<File name="Side.h" open="1" top="0" tabpos="6">
-		<Cursor position="576" topLine="4" />
+	<File name="Side.h" open="1" top="0" tabpos="4">
+		<Cursor position="576" topLine="8" />
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="739" topLine="16" />
+	<File name="main.cpp" open="1" top="1" tabpos="1">
+		<Cursor position="1600" topLine="29" />
 	</File>
 </CodeBlocks_layout_file>

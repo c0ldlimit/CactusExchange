@@ -21,7 +21,7 @@ void Side::removePriceLevel(int price)
     it = levels.find(price);
     if (it != levels.end())
     {
-        levels[price].erase (price);
+        levels.erase(price);
     }
 
 }

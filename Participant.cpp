@@ -18,7 +18,7 @@ void Participant::addTradeTransaction(string symbol, int quantity, double tradeP
     it = positions.find(symbol);
     if (it == positions.end())
     {
-        positions[symbol] = quantity; // if not existing position add new position
+        positions.insert (make_pair(symbol,quantity)); // if not existing position add new position
     }
     else // position exists
     {
